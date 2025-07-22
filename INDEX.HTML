@@ -1,123 +1,119 @@
-# ASSIGNMENT1
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Basic Portfolio</title>
+    <title>Student Registration Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f0f0f0;
-            margin: 0;
-            padding: 0;
+            background: #f2f2f2;
         }
-        header {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        section {
-            background: white;
-            margin: 20px;
-            padding: 20px;
+        .container {
+            background: #fff;
+            width: 500px;
+            margin: 50px auto;
+            padding: 30px;
             border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        table, th, td {
-            border: 1px solid #555;
-        }
-        th, td {
-            padding: 10px;
+        h2 {
             text-align: center;
+            margin-bottom: 25px;
         }
-        form input, form textarea {
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        textarea,
+        select {
             width: 100%;
-            padding: 8px;
-            margin: 8px 0;
+            padding: 10px;
+            margin-top: 5px;
             border-radius: 5px;
             border: 1px solid #ccc;
         }
-        form button {
+        .gender-options {
+            margin-top: 5px;
+        }
+        .gender-options input {
+            margin-right: 5px;
+        }
+        .btn-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
             padding: 10px 20px;
-            background: #333;
-            color: white;
             border: none;
             border-radius: 5px;
+            cursor: pointer;
         }
-        footer {
-            text-align: center;
-            background: #222;
-            color: #aaa;
-            padding: 10px;
-            margin-top: 20px;
+        .submit-btn {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .reset-btn {
+            background-color: #dc3545;
+            color: #fff;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>My Basic Portfolio</h1>
-</header>
-
-<section>
-    <h2>About Me</h2>
-    <p>Hello! I'm Mohit Sharma, a passionate Computer Science student interested in software development, web technologies, and problem-solving.</p>
-</section>
-
-<section>
-    <h2>Student Details Table</h2>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Roll Number</th>
-            <th>Course</th>
-        </tr>
-        <tr>
-            <td>Mohit Sharma</td>
-            <td>101</td>
-            <td>B.Tech CSE</td>
-        </tr>
-        <tr>
-            <td>Riya Mehta</td>
-            <td>102</td>
-            <td>BCA</td>
-        </tr>
-        <tr>
-            <td>Raj Verma</td>
-            <td>103</td>
-            <td>MCA</td>
-        </tr>
-    </table>
-</section>
-
-<section>
+<div class="container">
     <h2>Student Registration Form</h2>
-    <form>
-        <label>Full Name:</label>
-        <input type="text" placeholder="Enter your name" required>
+    <form action="#" method="post">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
 
-        <label>Email:</label>
-        <input type="email" placeholder="Enter your email" required>
+        <label for="rollno">Roll Number:</label>
+        <input type="text" id="rollno" name="rollno" required>
 
-        <label>Course:</label>
-        <input type="text" placeholder="Enter your course" required>
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required>
 
-        <label>Message:</label>
-        <textarea placeholder="Write something"></textarea>
+        <label for="phone">Mobile Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit number" required>
 
-        <button type="submit">Submit</button>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label>Gender:</label>
+        <div class="gender-options">
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male" style="display:inline;">Male</label>
+
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female" style="display:inline;">Female</label>
+
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other" style="display:inline;">Other</label>
+        </div>
+
+        <label for="course">Course:</label>
+        <select id="course" name="course" required>
+            <option value="">Select Course</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="B.Sc">B.Sc</option>
+            <option value="BBA">BBA</option>
+            <option value="MBA">MBA</option>
+            <option value="M.Tech">M.Tech</option>
+        </select>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+
+        <div class="btn-container">
+            <button type="submit" class="btn submit-btn">Submit</button>
+            <button type="reset" class="btn reset-btn">Reset</button>
+        </div>
     </form>
-</section>
-
-<footer>
-    &copy; 2025 Mohit Sharma | Basic Portfolio
-</footer>
+</div>
 
 </body>
 </html>
